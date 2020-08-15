@@ -81,6 +81,20 @@ typedef struct {
     .single_status_byte = false,                                               \
   }
 
+// Settings for the Adesto Tech AT25SF321B 4MiB SPI flash.
+// Datasheet: https://www.adestotech.com/wp-content/uploads/AT25SF321B.pdf
+#define AT25SF321B                                                             \
+  {                                                                            \
+    .total_size = (1 << 22), /* 4 MiB */                                       \
+        .start_up_time_us = 10000, .manufacturer_id = 0x1f,                    \
+    .memory_type = 0x87, .capacity = 0x01, .max_clock_speed_mhz = 85,          \
+    .quad_enable_bit_mask = 0x00, .has_sector_protection = true,               \
+    .supports_fast_read = true, .supports_qspi = false,                        \
+    .supports_qspi_writes = false, .write_status_register_split = false,       \
+    .single_status_byte = false,                                               \
+  }
+
+
 // Settings for the Gigadevice GD25Q16C 2MiB SPI flash.
 // Datasheet: http://www.gigadevice.com/datasheet/gd25q16c/
 #define GD25Q16C                                                               \
